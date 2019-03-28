@@ -6,44 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4483e31-3b15-4871-9e9f-662b16c325b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/androidTest/java/com/example/imoto10/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/imoto10/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/app/src/test/java/com/example/imoto10/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/settings.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="c4483e31-3b15-4871-9e9f-662b16c325b3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
