@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "166039700973",
+    "firebase_url": "https://imoto-1549478550436.firebaseio.com",
+    "project_id": "imoto-1549478550436",
+    "storage_bucket": "imoto-1549478550436.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166039700973:android:6d5337c20671009e",
+        "android_client_info": {
+          "package_name": "com.example.imoto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166039700973-6drml0b3hec6et7qvmvteme2mo06imiq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnwbXzo9at-k827xs_qxBkFc3Yep9hlaI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
