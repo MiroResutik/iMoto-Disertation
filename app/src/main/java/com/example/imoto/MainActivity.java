@@ -26,28 +26,30 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         //Defining Cards
-        favourite_places = (CardView) findViewById(R.id.favourite_places);
+        favourite_places = findViewById(R.id.favourite_places);
+        first_aid = findViewById(R.id.first_aid);
 
         //Add Click listener to the cards
         favourite_places.setOnClickListener(this);
+        first_aid.setOnClickListener(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -97,7 +99,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -109,6 +111,10 @@ public class MainActivity extends AppCompatActivity
         switch (v.getId()) {
             case R.id.favourite_places:
                 i = new Intent(this, FavouritePlaces.class);
+                startActivity(i);
+                break;
+            case R.id.first_aid:
+                i = new Intent(getPackageManager().getLaunchIntentForPackage("com.cube.rca"));
                 startActivity(i);
                 break;
             //case R.id.navigate : i = new Intent(this,MapsActivity.class); startActivity(i); break;
