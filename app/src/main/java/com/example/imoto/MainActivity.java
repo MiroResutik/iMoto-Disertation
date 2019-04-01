@@ -1,8 +1,10 @@
 package com.example.imoto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,12 +16,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
+
+    private CardView favourite_places, navigate, parking, weather, fuel, my_folder,first_aid, calendar, messages, round_trip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Defining Cards
+        favourite_places = (CardView) findViewById(R.id.favourite_places);
+
+        //Add Click listener to the cards
+        favourite_places.setOnClickListener(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -89,5 +100,20 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        Intent i;
+        switch (v.getId()) {
+            case R.id.favourite_places:
+                i = new Intent(this, FavouritePlaces.class);
+                startActivity(i);
+                break;
+            //case R.id.navigate : i = new Intent(this,MapsActivity.class); startActivity(i); break;
+            default:
+                break;
+        }
     }
 }

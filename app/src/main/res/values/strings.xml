@@ -22,4 +22,5 @@
     <string name="friends">Friends</string>
     <string name="camera">Camera</string>
     <string name="help">Help</string>
+    <string name="title_activity_favourite_places_maps">Map</string>
 </resources>
