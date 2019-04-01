@@ -6,4 +6,20 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="navigate">Navigate</string>
+    <string name="find_parking">Find Parking</string>
+    <string name="check_weather">Check Weather</string>
+    <string name="my_profile">My Profile</string>
+    <string name="profile_picture">TODO</string>
+    <string name="Favourite_places">TextView</string>
+    <string name="log_in">Log in</string>
+    <string name="settings">Settings</string>
+    <string name="send">Send</string>
+    <string name="share">Share</string>
+    <string name="communicate">Communicate</string>
+    <string name="slideshow">Slideshow</string>
+    <string name="gallery">Gallery</string>
+    <string name="friends">Friends</string>
+    <string name="camera">Camera</string>
+    <string name="help">Help</string>
 </resources>
