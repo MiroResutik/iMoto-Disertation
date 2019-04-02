@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">iMoto</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="title_activity_favourite_places_maps">Have to find out</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
