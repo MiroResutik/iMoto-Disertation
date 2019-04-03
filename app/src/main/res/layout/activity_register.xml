@@ -52,7 +52,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_mail" />
+        app:layout_constraintTop_toBottomOf="@+id/login_mail"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/loginBtn"
@@ -92,7 +93,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regMail" />
+        app:layout_constraintTop_toBottomOf="@+id/regMail"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/regPassword2"
@@ -107,5 +109,6 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password"
+        android:importantForAutofill="no" />
 </android.support.constraint.ConstraintLayout>

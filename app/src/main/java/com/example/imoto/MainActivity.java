@@ -12,9 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
+
+        FirebaseAuth mAuth;
+        FirebaseUser currentUser;
 
     private CardView favourite_places, navigate, parking, weather, fuel, my_folder,first_aid, calendar, messages, round_trip;
 
@@ -34,6 +43,10 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //ini
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,6 +56,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Run updateNavHeader function to update nav header with pictrue, email and name from firebase
+        updateNavHeader();
     }
 
     @Override
@@ -95,13 +111,15 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.nav_logout){
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+    //Method to
     @Override
     public void onClick(View v) {
 
@@ -119,5 +137,23 @@ public class MainActivity extends AppCompatActivity
             default:
                 break;
         }
+    }
+    //Function to update navigation header
+    public void updateNavHeader(){
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUserName = headerView.findViewById(R.id.nav_username);
+        TextView navUserEmail = headerView.findViewById(R.id.nav_user_email);
+        ImageView navUserPhoto = headerView.findViewById(R.id.nav_user_photo);
+
+        navUserEmail.setText(currentUser.getEmail());
+        navUserName.setText(currentUser.getDisplayName());
+
+        Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhoto);
+
+
+
+
     }
 }
