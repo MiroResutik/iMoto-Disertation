@@ -16,8 +16,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.imoto.Fragments.FriendsFragment;
+import com.example.imoto.Fragments.GalleryFragment;
+import com.example.imoto.Fragments.MyProfileFragment;
+import com.example.imoto.Fragments.SettingsFragment;
+import com.example.imoto.Fragments.ShareFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
@@ -102,16 +109,32 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Gallery");
+            getSupportFragmentManager().beginTransaction().replace(R.id.gallery_container, new GalleryFragment()).commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_my_profile) {
+            Objects.requireNonNull(getSupportActionBar()).setTitle("My Profile");
+            getSupportFragmentManager().beginTransaction().replace(R.id.my_profile_container, new MyProfileFragment()).commit();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_friends) {
+            Objects.requireNonNull(getSupportActionBar()).setTitle("My Friends");
+            getSupportFragmentManager().beginTransaction().replace(R.id.friends_container, new FriendsFragment()).commit();
 
         } else if (id == R.id.nav_share) {
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Share");
+            getSupportFragmentManager().beginTransaction().replace(R.id.share_container, new ShareFragment()).commit();
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_settings) {
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Settings");
+            getSupportFragmentManager().beginTransaction().replace(R.id.settings_container, new SettingsFragment()).commit();
+
 
         } else if (id == R.id.nav_logout){
+            //Log out of the application - Terminate the application
+            FirebaseAuth.getInstance().signOut();
+            Intent loginActivity = new Intent(this, LoginActivity.class);
+            startActivity(loginActivity);
+            finish();
 
         }
 
