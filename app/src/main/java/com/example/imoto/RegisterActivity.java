@@ -51,12 +51,12 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         //inu views
-        userName = findViewById(R.id.regName);
+        userName = findViewById(R.id.login_mail);
         userEmail = findViewById(R.id.regMail);
-        userPassword = findViewById(R.id.regPassword);
+        userPassword = findViewById(R.id.login_password);
         userPassword2 = findViewById(R.id.regPassword2);
         loadingProgress = findViewById(R.id.regProgressBar);
-        regBtn = findViewById(R.id.regBtn);
+        regBtn = findViewById(R.id.loginBtn);
 
         loadingProgress.setVisibility(View.INVISIBLE);
 
@@ -187,8 +187,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent(getApplicationContext(),HomeActivity.class);
-        startActivity(homeActivity);
+        Intent mainActivity = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(mainActivity);
         finish();
     }
 

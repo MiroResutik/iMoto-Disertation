@@ -30,4 +30,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="button">Button</string>
     <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="login">LOGIN</string>
+    <string name="not_registered_register_here">Not Registered? Register Here</string>
 </resources>
