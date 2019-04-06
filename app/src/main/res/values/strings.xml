@@ -33,5 +33,6 @@
     <string name="email">Email</string>
     <string name="login">LOGIN</string>
     <string name="not_registered_register_here">Not Registered? Register Here</string>
+    <string name="todo">TODO</string>
 
 </resources>
