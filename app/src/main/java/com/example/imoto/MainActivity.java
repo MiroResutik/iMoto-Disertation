@@ -45,11 +45,13 @@ public class MainActivity extends AppCompatActivity
         favourite_places = findViewById(R.id.favourite_places);
         first_aid = findViewById(R.id.first_aid);
         weather = findViewById(R.id.weather);
+        parking = findViewById(R.id.parking);
 
         //Add Click listener to the cards
         favourite_places.setOnClickListener(this);
         first_aid.setOnClickListener(this);
         weather.setOnClickListener(this);
+        parking.setOnClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -162,6 +164,10 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.weather:
                 i = new Intent(this, WeatherActivity.class);
+                startActivity(i);
+                break;
+            case R.id.parking:
+                i = new Intent(this, NearbyPlacesMapsActivity.class);
                 startActivity(i);
                 break;
             //case R.id.navigate : i = new Intent(this,MapsActivity.class); startActivity(i); break;
