@@ -3,8 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+    tools:context=".Fragments.GalleryFragment">
+
+<FrameLayout
+    android:id="@+id/gallery_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</FrameLayout>
+=======
     android:id="@+id/gallery_container"
     tools:context=".Fragments.GalleryFragment">
 
+>>>>>>> 8e9e5136a12705bdce481ddfd8b46512cb92e1b0
 
 </FrameLayout>

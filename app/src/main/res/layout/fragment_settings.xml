@@ -3,8 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+    tools:context=".Fragments.SettingsFragment">
+
+    <FrameLayout
+        android:id="@+id/settings_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+=======
     android:id="@+id/settings_container"
     tools:context=".Fragments.SettingsFragment">
 
+>>>>>>> 8e9e5136a12705bdce481ddfd8b46512cb92e1b0
 
 </FrameLayout>

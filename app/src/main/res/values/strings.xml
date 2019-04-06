@@ -35,4 +35,11 @@
     <string name="not_registered_register_here">Not Registered? Register Here</string>
     <string name="todo">TODO</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+<<<<<<< HEAD
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+=======
+    <string name="hello_blank_fragment">Today Weather Demo</string>
+>>>>>>> 8e9e5136a12705bdce481ddfd8b46512cb92e1b0
+
 </resources>

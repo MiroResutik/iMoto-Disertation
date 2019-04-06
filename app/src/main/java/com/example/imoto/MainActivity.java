@@ -2,6 +2,7 @@ package com.example.imoto;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -29,6 +30,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
 
+        //Firebase variables
         FirebaseAuth mAuth;
         FirebaseUser currentUser;
 
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 

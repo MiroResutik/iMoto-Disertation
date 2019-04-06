@@ -78,12 +78,16 @@ public class GalleryFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+<<<<<<< HEAD
+
+=======
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+>>>>>>> 8e9e5136a12705bdce481ddfd8b46512cb92e1b0
     }
 
     @Override
