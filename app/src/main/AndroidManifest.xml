@@ -44,6 +44,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".WeatherActivity"></activity>
         <activity
             android:name=".FavouritePlacesMapsActivity"
             android:label="@string/title_activity_favourite_places_maps" />
