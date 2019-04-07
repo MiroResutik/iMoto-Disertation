@@ -13,57 +13,58 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="609dp"
+        android:layout_height="587dp"
         android:layout_alignParentTop="true"
 
-        map:layout_constraintBottom_toTopOf="@+id/tf_location"
+        map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintTop_toTopOf="parent"
-        map:layout_constraintVertical_bias="0.0"
-        tools:context=".NearbyPlacesMapsActivity"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:context=".NearbyPlacesMapsActivity" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
 
-    <EditText
-        android:id="@+id/tf_location"
-        android:layout_width="284dp"
-        android:layout_height="56dp"
-        android:layout_below="@+id/map"
-        android:layout_alignParentStart="true"
+        android:layout_height="94dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        tools:layout_editor_absoluteX="0dp">
 
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        <Button
+            android:id="@+id/b_hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/reg_btn_style"
+            android:onClick="onClick"
+            android:text="@string/hospital"
+            android:textColor="#ffffff" />
 
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="616dp"
-        android:layout_marginEnd="8dp"
-        android:layout_toStartOf="@+id/b_search"
-        android:background="@drawable/reg_edittext_style"
-        android:hint="@string/type_here"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/b_search"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/b_parking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/reg_btn_style"
+            android:onClick="onClick"
+            android:text="@string/parking"
+            android:textColor="#ffffff" />
 
+        <Button
+            android:id="@+id/b_restaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/reg_btn_style"
+            android:onClick="onClick"
+            android:text="@string/restaurant"
+            android:textColor="#ffffff" />
 
-    <Button
-        android:id="@+id/b_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/map"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/reg_btn_style"
-        android:onClick="onClick"
-        android:text="@string/search_button"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
+        <Button
+            android:id="@+id/b_fuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/reg_btn_style"
+            android:onClick="onClick"
+            android:text="@string/fuel"
+            android:textColor="#ffffff" />
 
-
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 
 

@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -45,6 +46,8 @@ public class NearbyPlacesMapsActivity extends FragmentActivity implements OnMapR
     private Location lastLocation;
     private Marker currentLocationMarker;
     public static final int REQUEST_LOCATION_CODE = 99;
+    int PROXIMITY_RADIUS = 10000;
+    double latitude,longitude;
 
 
 
@@ -100,53 +103,82 @@ public class NearbyPlacesMapsActivity extends FragmentActivity implements OnMapR
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        //Initialize Google Play Services
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                buildGoogleApiClient();
-                mMap.setMyLocationEnabled(true);
-
-            }
-        }else {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             buildGoogleApiClient();
-            mMap.setMyLocationEnabled(true);
 
+            mMap.setMyLocationEnabled(true);
+            mMap.animateCamera(CameraUpdateFactory.zoomBy(5));
+            mMap.moveCamera(CameraUpdateFactory.zoomTo(5));
         }
+        mMap.animateCamera(CameraUpdateFactory.zoomBy(5));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(5));
 
     }
 
     public void onClick(View view){
+        Object dataTransfer[] = new Object[2];
+        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
 
         //Check for click button
-        if (view.getId() == R.id.b_search){
-            EditText tf_location = (EditText)findViewById(R.id.tf_location);
-            String location = tf_location.getText().toString();
-            List<Address> addressList = null;
-            MarkerOptions markerOptions = new MarkerOptions();
+        switch (view.getId()) {
 
-            if (!location.equals("")){
+            case R.id.b_hospital:
+                mMap.clear();
+                String hospital = "hospital";
+                String url = getUrl(latitude, longitude, hospital);
+                dataTransfer[0] = mMap;
+                dataTransfer[1] = url;
+                //
 
-                Geocoder geocoder = new Geocoder(this);
-                try {
-                    addressList = geocoder.getFromLocationName(location, 5);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                getNearbyPlacesData.execute(dataTransfer);
+                Toast.makeText(NearbyPlacesMapsActivity.this, "Nearby Hospitals", Toast.LENGTH_LONG).show();
+                break;
 
-                for (int i = 0; i<addressList.size(); i++){
+            case R.id.b_restaurant:
+                mMap.clear();
+                String restaurant = "restaurant";
+                url = getUrl(latitude, longitude, restaurant);
+                dataTransfer[0] = mMap;
+                dataTransfer[1] = url;
 
-                   Address myAddress = addressList.get(i);
-                   LatLng latLng = new LatLng(myAddress.getLatitude(), myAddress.getLongitude());
-                   markerOptions.position(latLng);
-                   markerOptions.title("Your result");
-                   mMap.addMarker(markerOptions);
-                   mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-
-                }
-
-            }
+                getNearbyPlacesData.execute(dataTransfer);
+                Toast.makeText(NearbyPlacesMapsActivity.this, "Nearby Restaurants", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.b_parking:
+                mMap.clear();
+                String parking = "parking";
+                url = getUrl(latitude, longitude, parking);
+                dataTransfer[0] = mMap;
+                dataTransfer[1] = url;
+                //
+                getNearbyPlacesData.execute(dataTransfer);
+                Toast.makeText(NearbyPlacesMapsActivity.this, "Nearby Parking", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.b_fuel:
+                mMap.clear();
+                String fuel = "fuel";
+                url = getUrl(latitude, longitude, fuel);
+                dataTransfer[0] = mMap;
+                dataTransfer[1] = url;
+                //
+                getNearbyPlacesData.execute(dataTransfer);
+                Toast.makeText(NearbyPlacesMapsActivity.this, "Nearby Fuel Stations", Toast.LENGTH_LONG).show();
+                break;
         }
+    }
+
+    private String getUrl(double latitude, double longitude, String nearbyPlace){
+
+        StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googlePlaceUrl.append("location="+latitude+","+longitude);
+        googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
+        googlePlaceUrl.append("&type="+nearbyPlace);
+        googlePlaceUrl.append("&sensor=true");
+        googlePlaceUrl.append("&key="+"AIzaSyABjk4CXNwX7OXQgRM59xIC_c05xFyCjhQ");
+
+        Log.d("NearbyPlacesMapsActivity", "url = "+googlePlaceUrl.toString());
+
+        return googlePlaceUrl.toString();
 
     }
     //Google API client
@@ -164,12 +196,15 @@ public class NearbyPlacesMapsActivity extends FragmentActivity implements OnMapR
     @Override
     public void onLocationChanged(Location location) {
 
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
         lastLocation = location;
 
         if (currentLocationMarker !=null){
 
             currentLocationMarker.remove();
         }
+        Log.d("lat = ",""+latitude);
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);

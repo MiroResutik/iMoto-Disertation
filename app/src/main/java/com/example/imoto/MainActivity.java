@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
         FirebaseAuth mAuth;
         FirebaseUser currentUser;
 
-    private CardView favourite_places, navigate, parking, weather, fuel, my_folder,first_aid, calendar, messages, round_trip;
+    private CardView favourite_places, navigate, parking, weather, my_folder,first_aid, calendar, messages, round_trip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

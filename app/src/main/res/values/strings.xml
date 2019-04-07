@@ -38,10 +38,12 @@
     <string name="type_here">Type here</string>
 
 
-    =======
     <string name="hello_blank_fragment">Today Weather Demo</string>
     <string name="title_activity_nearby_places_maps">Map</string>
     <string name="search_button">Search</string>
-    >>>>>>> 8e9e5136a12705bdce481ddfd8b46512cb92e1b0
+    <string name="hospital">Hospital</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="fuel">Fuel</string>
+
 
 </resources>
