@@ -2,6 +2,8 @@ package com.example.imoto;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -11,6 +13,8 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -26,6 +30,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
 
 public class NavigationMapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -117,6 +124,47 @@ public class NavigationMapsActivity extends FragmentActivity implements OnMapRea
         }
     }
 
+
+    //On click listener for search address
+    public void onClickSearch(View view){
+        if (view.getId() == R.id.btn_search){
+
+            EditText find_destination = findViewById(R.id.find_destination);
+            //Convert to string
+            String destination = find_destination.getText().toString();
+            //Create adress list
+            List<Address> addressList = null;
+            //Set marker
+            MarkerOptions markerOptions = new MarkerOptions();
+
+
+            if( !destination.equals("")){
+                Geocoder geocoder = new Geocoder(this);
+                try {
+                    addressList = geocoder.getFromLocationName(destination, 10);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                //Add markes to found locations
+                for (int i =0; i<addressList.size(); i++){
+
+                    Address myAddress = addressList.get(i);
+                    LatLng latLng = new LatLng(myAddress.getLatitude(), myAddress.getLongitude());
+                    markerOptions.position(latLng);
+                    markerOptions.title("Search results");
+                    //add marker to position
+                    mMap.addMarker(markerOptions);
+                    mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                }
+
+            }
+        }
+
+    }
+
+
+    //Method to build google api client
     protected synchronized void buildGoogleApiClient(){
         client = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -126,6 +174,9 @@ public class NavigationMapsActivity extends FragmentActivity implements OnMapRea
 
         client.connect();
     }
+
+
+    //Method setting the location intervals
     @Override
     public void onConnected(@Nullable Bundle bundle) {
 
@@ -151,6 +202,8 @@ public class NavigationMapsActivity extends FragmentActivity implements OnMapRea
 
     }
 
+
+    //Method to display marker on current location and move the camera to the location
     @Override
     public void onLocationChanged(Location location) {
 
