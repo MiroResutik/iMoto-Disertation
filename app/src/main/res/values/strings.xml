@@ -44,6 +44,12 @@
     <string name="hospital">Hospital</string>
     <string name="restaurant">Restaurant</string>
     <string name="fuel">Fuel</string>
-
+    <string name="title_activity_navigation_maps">Map</string>
+    <string name="distance">0 km</string>
+    <string name="find">Find</string>
+    <string name="duration">0 min</string>
+    <string name="find_destination">Find path</string>
+    <string name="search">Search</string>
+    <string name="enter_destination">Enter destination</string>
 
 </resources>
