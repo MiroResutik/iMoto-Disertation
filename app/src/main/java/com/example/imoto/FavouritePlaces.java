@@ -27,7 +27,7 @@ public class FavouritePlaces extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite_places);
         //Array list to store Favourite Places
-        ListView listView = (ListView) findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("com.example.imoto", Context.MODE_PRIVATE);
 

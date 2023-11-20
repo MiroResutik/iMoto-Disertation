@@ -19,8 +19,6 @@ package com.example.imoto;
  */
 
 
-import android.util.Log;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

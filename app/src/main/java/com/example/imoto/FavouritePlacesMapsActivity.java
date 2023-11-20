@@ -43,7 +43,7 @@ public class FavouritePlacesMapsActivity extends FragmentActivity implements OnM
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED);{
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==PackageManager.PERMISSION_GRANTED) {
 
